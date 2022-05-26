@@ -1,5 +1,5 @@
 function App() {
-  return <div>adasa dsda sd dssds asdd da</div>;
+  return <div></div>;
 }
 
 export default App;
