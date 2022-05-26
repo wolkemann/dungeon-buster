@@ -9,10 +9,15 @@
   "nativeAllowList": ["app.*"],
   "modes": {
     "window": {
-      "title": "dungeon-buster",
-      "width": 800,
-      "height": 500,
-      "icon": "/engine/public/favicon.ico"
+      "title": "Dungeon Busters",
+      "width": 1200,
+      "height": 800,
+      "icon": "/engine/public/favicon.ico",
+      "enableInspector": true,
+      "borderless": false,
+      "maximize": false,
+      "hidden": false,
+      "resizable": false
     }
   },
   "cli": {
