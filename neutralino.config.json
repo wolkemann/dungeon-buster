@@ -1,0 +1,30 @@
+{
+  "applicationId": "js.neutralino.zero",
+  "version": "1.0.0",
+  "defaultMode": "window",
+  "documentRoot": "/engine/build/",
+  "url": "/",
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "nativeAllowList": ["app.*"],
+  "modes": {
+    "window": {
+      "title": "dungeon-buster",
+      "width": 800,
+      "height": 500,
+      "icon": "/engine/public/favicon.ico"
+    }
+  },
+  "cli": {
+    "binaryName": "dungeon-buster",
+    "resourcesPath": "/engine/build/",
+    "extensionsPath": "/extensions/",
+    "clientLibrary": "/engine/public/neutralino.js",
+    "binaryVersion": "4.5.0",
+    "clientVersion": "3.4.0",
+    "frontendLibrary": {
+      "patchFile": "/engine/public/index.html",
+      "devUrl": "http://localhost:3000"
+    }
+  }
+}
