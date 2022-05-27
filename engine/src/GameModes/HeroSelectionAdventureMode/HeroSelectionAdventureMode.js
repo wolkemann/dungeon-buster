@@ -5,6 +5,8 @@ import { HeroesDatabase } from "../../Database/Heroes";
 export default function HeroSelectionAdventureMode() {
   const [heroCursor, setHeroCursor] = useState(0);
   const [adventureLength, setAdventureLength] = useState(1);
+  const [classScenarioEnabled, setClassScenarioEnabled] = useState(false);
+  const [heroScenarioEnabled, setHeroScenarioEnabled] = useState(false);
   const hero = HeroesDatabase[heroCursor];
 
   function handleHeroCursorBack() {
@@ -107,13 +109,36 @@ export default function HeroSelectionAdventureMode() {
               Long
             </AdventureLengthButton>
           </AdventureLengthOptions>
-          adjsjado
+          <ExtraOptions>
+            <ExtraOptionsCheckBox
+              onClick={() => {
+                setClassScenarioEnabled(!classScenarioEnabled);
+              }}
+              className={classScenarioEnabled ? "active" : null}
+            />{" "}
+            <p>Class scenario</p>
+            <ExtraOptionsCheckBox
+              onClick={() => {
+                setHeroScenarioEnabled(!heroScenarioEnabled);
+              }}
+              className={heroScenarioEnabled ? "active" : null}
+            />{" "}
+            <p>Hero scenario</p>
+          </ExtraOptions>
+        </OptionsWindow>
+
+        <OptionsWindow>
+          <StartButton>Start Adventure</StartButton>
         </OptionsWindow>
       </AdventureModeOptions>
     </MainWindow>
   );
 }
-
+/**
+ *
+ *  Hero Selection Screen - Adventure Mode Styled Components
+ *
+ */
 const MainWindow = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -122,18 +147,30 @@ const MainWindow = styled.div`
   width: 100vw;
   height: 100vh;
 `;
-
+/**
+ *
+ *  Column generic component
+ *
+ */
 const Column = styled.div`
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
 `;
-
+/**
+ *
+ *  Intial Stat Column component
+ *
+ */
 const InitialStats = styled(Column)`
   justify-content: start;
   gap: 20px;
 `;
-
+/**
+ *
+ *  Hero Portait component
+ *
+ */
 const HeroPortait = styled.div`
   width: 313px;
   height: 466px;
@@ -150,7 +187,11 @@ const HeroName = styled.div`
     text-align: center;
   }
 `;
-
+/**
+ *
+ *  Hero Stat Section component
+ *
+ */
 const HeroStatsWindow = styled.div`
   display: grid;
   grid-template-columns: auto 35px;
@@ -166,7 +207,11 @@ const HeroStat = styled.div`
 const HeroStatNumber = styled(HeroStat)`
   text-align: center;
 `;
-
+/**
+ *
+ *  Hero Equipment Section component
+ *
+ */
 const HeroEquipment = styled(HeroStatsWindow)`
   grid-template-columns: 35px auto;
 `;
@@ -176,7 +221,11 @@ const EquipmentIcon = styled(HeroStat)`
 `;
 
 const EquipmentName = styled(HeroStat)``;
-
+/**
+ *
+ *  Adventure Mode Options Column component
+ *
+ */
 const AdventureModeOptions = styled(Column)`
   padding: 10px;
   background-image: url("./resources/backgrounds/map.png");
@@ -188,7 +237,11 @@ const OptionsWindow = styled.div`
   padding: 5px;
   background-color: var(--primary-color);
 `;
-
+/**
+ *
+ *  Select Hero component
+ *
+ */
 const SelectHeroArrow = styled.p`
   outline: 3px var(--secondary-color) solid;
   &:hover {
@@ -211,17 +264,21 @@ const SelectHeroName = styled.div`
   border: 3px var(--primary-color) solid;
   outline: 3px var(--secondary-color) solid;
 `;
-
-const OptionsLabel = styled.div`
-  text-align: center;
-  margin-bottom: 8px;
-`;
-
+/**
+ *
+ *  Adventure Options component
+ *
+ */
 const AdventureLengthOptions = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   border: 3px var(--primary-color) solid;
   outline: 3px var(--secondary-color) solid;
+`;
+
+const OptionsLabel = styled.div`
+  text-align: center;
+  margin-bottom: 8px;
 `;
 
 const AdventureLengthButton = styled.div`
@@ -236,5 +293,46 @@ const AdventureLengthButton = styled.div`
   &.active {
     background-color: var(--secondary-color);
     color: var(--primary-color);
+  }
+`;
+
+const ExtraOptions = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 5px;
+  margin-top: 10px;
+  align-items: center;
+`;
+
+const ExtraOptionsCheckBox = styled.div`
+  width: 15px;
+  height: 15px;
+  background-color: var(--primary-color);
+  border: 3px var(--secondary-color) solid;
+
+  &:hover {
+    background-color: var(--secondary-color);
+    transition: 0.1s;
+  }
+  &.active {
+    background-color: var(--secondary-color);
+  }
+`;
+/**
+ *
+ *  Start Button component
+ *
+ */
+const StartButton = styled.div`
+  padding: 10px;
+  text-align: center;
+  background-color: var(--primary-color);
+  border: 3px var(--primary-color) solid;
+  outline: 3px var(--secondary-color) solid;
+
+  &:hover {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    transition: 0.1s;
   }
 `;
