@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import styled from "styled-components";
 import AdventureMode from "./GameModes/AdventureMode/AdentureMode";
 import HeroSelectionAdventureMode from "./GameModes/HeroSelectionAdventureMode/HeroSelectionAdventureMode";
 import TitleScreen from "./GameModes/TitleScreen/TitleScreen";
@@ -17,5 +18,10 @@ function App() {
       return <TitleScreen />;
   }
 }
+
+const MainContainer = styled.div`
+  width: 1200px;
+  height: 800px;
+`;
 
 export default App;

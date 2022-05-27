@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const MainWindow = styled.div`
   display: flex;
   flex-flow: column wrap;
-  width: 100vw;
-  height: 100vh;
-  margin: 5px;
+  width: 945px;
+  height: 620px;
+  padding: 5px;
+  padding-top: 10px;
 `;

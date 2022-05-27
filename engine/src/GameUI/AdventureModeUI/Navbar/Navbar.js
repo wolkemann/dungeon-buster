@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   background-color: var(--secondary-color);
   display: flex;
   gap: 3px;
-  margin-right: 10px;
+
   margin-bottom: 3px;
   outline: 3px var(--secondary-color) solid;
 `;

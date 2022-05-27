@@ -168,8 +168,8 @@ const MainWindow = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 10px;
   padding: 10px;
-  width: 100vw;
-  height: 100vh;
+  width: 950px;
+  height: 605px;
 `;
 /**
  *

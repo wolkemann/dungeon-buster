@@ -10,6 +10,5 @@ export const Wrapper = styled.div`
   outline: 3px var(--secondary-color) solid;
   flex-grow: 1;
   margin-top: 2px;
-  margin-right: 10px;
   margin-bottom: 11px;
 `;

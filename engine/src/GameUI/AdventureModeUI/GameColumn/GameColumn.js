@@ -6,7 +6,6 @@ export default function GameColumn() {
 
 const Wrapper = styled.div`
   flex-grow: 1;
-  margin-right: 10px;
   padding: 10px;
   border: 3px var(--primary-color) solid;
   outline: 3px var(--secondary-color) solid;
