@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import { useSelector } from "react-redux";
-
-import StartMenu from "../../GameUI/StartMenu/StartMenu";
+import StartMenu from "./StartMenu";
 
 export default function TitleScreen() {
   return (

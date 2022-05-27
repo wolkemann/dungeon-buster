@@ -1,13 +1,22 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { HeroesDatabase } from "../../Database/Heroes";
+import { initializeAdventure } from "../../GameGlobals/AdventureModeGlobals";
+import { setGameScreen } from "../../GameGlobals/GameOptions";
 
 export default function HeroSelectionAdventureMode() {
+  const dispatch = useDispatch();
   const [heroCursor, setHeroCursor] = useState(0);
   const [adventureLength, setAdventureLength] = useState(1);
   const [classScenarioEnabled, setClassScenarioEnabled] = useState(false);
   const [heroScenarioEnabled, setHeroScenarioEnabled] = useState(false);
   const hero = HeroesDatabase[heroCursor];
+
+  function handleStartAdventure() {
+    dispatch(setGameScreen("AdventureMode"));
+    dispatch(initializeAdventure({ hero: { ...hero } }));
+  }
 
   function handleHeroCursorBack() {
     if (heroCursor === 0) {
@@ -141,7 +150,9 @@ export default function HeroSelectionAdventureMode() {
         </OptionsWindow>
 
         <OptionsWindow>
-          <StartButton>Start Adventure</StartButton>
+          <StartButton onClick={handleStartAdventure}>
+            Start Adventure
+          </StartButton>
         </OptionsWindow>
       </AdventureModeOptions>
     </MainWindow>
