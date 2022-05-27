@@ -3,7 +3,25 @@ import styled from "styled-components";
 import { HeroesDatabase } from "../../Database/Heroes";
 
 export default function HeroSelectionAdventureMode() {
-  const [hero, setHero] = useState(HeroesDatabase[0]);
+  const [heroCursor, setHeroCursor] = useState(0);
+  const [adventureLength, setAdventureLength] = useState(1);
+  const hero = HeroesDatabase[heroCursor];
+
+  function handleHeroCursorBack() {
+    if (heroCursor === 0) {
+      setHeroCursor(HeroesDatabase.length - 1);
+      return;
+    }
+    setHeroCursor(heroCursor - 1);
+  }
+
+  function handleHeroCursorNext() {
+    if (heroCursor === HeroesDatabase.length - 1) {
+      setHeroCursor(0);
+      return;
+    }
+    setHeroCursor(heroCursor + 1);
+  }
 
   return (
     <MainWindow>
@@ -45,7 +63,53 @@ export default function HeroSelectionAdventureMode() {
         <p>Starting Spells and Traits</p>
       </InitialStats>
 
-      <AdventureModeOptions></AdventureModeOptions>
+      <AdventureModeOptions>
+        <OptionsWindow>
+          <SelectHeroCursor>
+            <SelectHeroArrow onClick={handleHeroCursorBack}>
+              &#11164;
+            </SelectHeroArrow>
+            <p>Choose Hero</p>
+            <SelectHeroArrow onClick={handleHeroCursorNext}>
+              &#11166;
+            </SelectHeroArrow>
+          </SelectHeroCursor>
+          <SelectHeroName>
+            {hero.firstName} {hero.lastName}
+          </SelectHeroName>
+        </OptionsWindow>
+
+        <OptionsWindow>
+          <OptionsLabel>Adventure Length</OptionsLabel>
+          <AdventureLengthOptions>
+            <AdventureLengthButton
+              onClick={() => {
+                setAdventureLength(0);
+              }}
+              className={adventureLength === 0 ? "active" : null}
+            >
+              Short
+            </AdventureLengthButton>
+            <AdventureLengthButton
+              onClick={() => {
+                setAdventureLength(1);
+              }}
+              className={adventureLength === 1 ? "active" : null}
+            >
+              Medium
+            </AdventureLengthButton>
+            <AdventureLengthButton
+              onClick={() => {
+                setAdventureLength(2);
+              }}
+              className={adventureLength === 2 ? "active" : null}
+            >
+              Long
+            </AdventureLengthButton>
+          </AdventureLengthOptions>
+          adjsjado
+        </OptionsWindow>
+      </AdventureModeOptions>
     </MainWindow>
   );
 }
@@ -114,7 +178,63 @@ const EquipmentIcon = styled(HeroStat)`
 const EquipmentName = styled(HeroStat)``;
 
 const AdventureModeOptions = styled(Column)`
+  padding: 10px;
   background-image: url("./resources/backgrounds/map.png");
   border: 3px var(--primary-color) solid;
   outline: 3px var(--secondary-color) solid;
+`;
+
+const OptionsWindow = styled.div`
+  padding: 5px;
+  background-color: var(--primary-color);
+`;
+
+const SelectHeroArrow = styled.p`
+  outline: 3px var(--secondary-color) solid;
+  &:hover {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    transition: 0.1s;
+  }
+`;
+
+const SelectHeroCursor = styled.div`
+  display: grid;
+  text-align: center;
+  grid-template-columns: auto auto auto;
+  margin-bottom: 8px;
+`;
+
+const SelectHeroName = styled.div`
+  text-align: center;
+  padding: 3px;
+  border: 3px var(--primary-color) solid;
+  outline: 3px var(--secondary-color) solid;
+`;
+
+const OptionsLabel = styled.div`
+  text-align: center;
+  margin-bottom: 8px;
+`;
+
+const AdventureLengthOptions = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 3px var(--primary-color) solid;
+  outline: 3px var(--secondary-color) solid;
+`;
+
+const AdventureLengthButton = styled.div`
+  padding: 3px;
+  text-align: center;
+  &:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: 0.1s;
+  }
+
+  &.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+  }
 `;

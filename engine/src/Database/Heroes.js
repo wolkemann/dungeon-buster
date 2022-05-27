@@ -23,4 +23,27 @@ const LanaClarke = new Hero({
   background: "",
 });
 
-export const HeroesDatabase = [LanaClarke];
+const FeybrandBenniko = new Hero({
+  level: 1,
+  firstName: "Feybrand",
+  lastName: "Benniko",
+  title: "the Living Saint",
+  race: "Human",
+  job: "Paladin",
+  face: "feybrand_face.png",
+  hp: 300,
+  maxHp: 300,
+  str: 15,
+  dex: 10,
+  int: 15,
+  cha: 10,
+  money: 1000,
+  weapon: null,
+  armor: null,
+  trinket: null,
+  spellbook: [],
+  inventory: [],
+  background: "",
+});
+
+export const HeroesDatabase = [LanaClarke, FeybrandBenniko];
