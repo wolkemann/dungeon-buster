@@ -10,7 +10,7 @@ export default function TitleScreen() {
 }
 
 const TitleScreenWindow = styled.div`
-  width: 1200px;
-  height: 800px;
+  width: 950px;
+  height: 605px;
   background-image: url("/resources/backgrounds/map.png");
 `;

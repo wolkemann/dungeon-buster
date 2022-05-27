@@ -19,9 +19,8 @@ export default function StartMenu() {
 
 const StartMenuWindow = styled.div`
   position: fixed;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 250px;
+  left: 350px;
   width: 250px;
   height: 250px;
   background-color: var(--primary-color);
