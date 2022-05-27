@@ -27,6 +27,11 @@ export default function HeroSelectionAdventureMode() {
 
   return (
     <MainWindow>
+      {/**
+       *
+       * HERO PORTAIT / NAME COLUMN
+       *
+       */}
       <Column>
         <HeroPortait
           style={{
@@ -38,7 +43,11 @@ export default function HeroSelectionAdventureMode() {
           <p>{hero.title}</p>
         </HeroName>
       </Column>
-
+      {/**
+       *
+       * HERO INITIAL STAT COLUMN
+       *
+       */}
       <InitialStats>
         <p>
           Level {hero.level} {hero.race} {hero.job}
@@ -64,7 +73,11 @@ export default function HeroSelectionAdventureMode() {
         </HeroEquipment>
         <p>Starting Spells and Traits</p>
       </InitialStats>
-
+      {/**
+       *
+       * ADVENTURE MODE OPTIONS COLUMN
+       *
+       */}
       <AdventureModeOptions>
         <OptionsWindow>
           <SelectHeroCursor>
@@ -149,7 +162,7 @@ const MainWindow = styled.div`
 `;
 /**
  *
- *  Column generic component
+ *  Column generic Styled component
  *
  */
 const Column = styled.div`
@@ -159,7 +172,7 @@ const Column = styled.div`
 `;
 /**
  *
- *  Intial Stat Column component
+ *  Intial Stat Column Styled component
  *
  */
 const InitialStats = styled(Column)`
@@ -168,7 +181,7 @@ const InitialStats = styled(Column)`
 `;
 /**
  *
- *  Hero Portait component
+ *  Hero Portait Styled component
  *
  */
 const HeroPortait = styled.div`
@@ -189,7 +202,7 @@ const HeroName = styled.div`
 `;
 /**
  *
- *  Hero Stat Section component
+ *  Hero Stat Section Styled component
  *
  */
 const HeroStatsWindow = styled.div`
@@ -209,7 +222,7 @@ const HeroStatNumber = styled(HeroStat)`
 `;
 /**
  *
- *  Hero Equipment Section component
+ *  Hero Equipment Section Styled component
  *
  */
 const HeroEquipment = styled(HeroStatsWindow)`
@@ -223,7 +236,7 @@ const EquipmentIcon = styled(HeroStat)`
 const EquipmentName = styled(HeroStat)``;
 /**
  *
- *  Adventure Mode Options Column component
+ *  Adventure Mode Options Column Styled component
  *
  */
 const AdventureModeOptions = styled(Column)`
@@ -239,7 +252,7 @@ const OptionsWindow = styled.div`
 `;
 /**
  *
- *  Select Hero component
+ *  Select Hero Styled component
  *
  */
 const SelectHeroArrow = styled.p`
@@ -266,7 +279,7 @@ const SelectHeroName = styled.div`
 `;
 /**
  *
- *  Adventure Options component
+ *  Adventure Options Styled component
  *
  */
 const AdventureLengthOptions = styled.div`
@@ -320,7 +333,7 @@ const ExtraOptionsCheckBox = styled.div`
 `;
 /**
  *
- *  Start Button component
+ *  Start Button Styled component
  *
  */
 const StartButton = styled.div`
