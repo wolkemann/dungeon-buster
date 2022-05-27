@@ -6,7 +6,7 @@
   "url": "/",
   "enableServer": true,
   "enableNativeAPI": true,
-  "nativeAllowList": ["app.*"],
+  "nativeAllowList": ["app.*", "window.*", "init.*"],
   "modes": {
     "window": {
       "title": "Dungeon Busters",

@@ -3,6 +3,10 @@ import { NavbarButton } from "./NavbarButton";
 import { NavbarLabel } from "./NavbarLabel";
 
 export default function Navbar() {
+  async function ddd() {
+    await window.Neutralino.app.exit();
+  }
+
   return (
     <Wrapper>
       <NavbarButton>&#9812;</NavbarButton>
@@ -10,7 +14,7 @@ export default function Navbar() {
       <NavbarButton>&#9815;</NavbarButton>
       <NavbarButton>&#9909;</NavbarButton>
       <NavbarLabel>Adventure Mode</NavbarLabel>
-      <NavbarButton>&#9778;</NavbarButton>
+      <NavbarButton onClick={ddd}>&#9778;</NavbarButton>
     </Wrapper>
   );
 }
