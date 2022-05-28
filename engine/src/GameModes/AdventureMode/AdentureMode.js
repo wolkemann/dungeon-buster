@@ -5,12 +5,14 @@ import HeroColumn from "../../GameUI/AdventureModeUI/HeroColumn/HeroColumn";
 import { MainWindow } from "../../GameUI/AdventureModeUI/MainWindow";
 import Navbar from "../../GameUI/AdventureModeUI/Navbar/Navbar";
 import Sidebar from "../../GameUI/AdventureModeUI/Sidebar/Sidebar";
+import SystemWindow from "../../GameUI/AdventureModeUI/SystemWindow/SystemWindow";
 
 export default function AdventureMode() {
-  const { adventureMode } = useSelector((store) => store);
+  const { systemWindowOpen } = useSelector((store) => store.adventureMode);
 
   return (
     <MainWindow>
+      {systemWindowOpen && <SystemWindow />}
       <Navbar />
       <GameWindow>
         <HeroColumn />

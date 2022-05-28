@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   gameScreen: "TitleScreen",
-  gameMode: null,
 };
 
 export const gameOptionsSlice = createSlice({
@@ -11,9 +10,6 @@ export const gameOptionsSlice = createSlice({
   reducers: {
     setGameScreen: (state, { payload }) => {
       state.gameScreen = payload;
-    },
-    setGameMode: (state, { payload }) => {
-      state.gameMode = payload;
     },
   },
 });

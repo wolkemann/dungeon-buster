@@ -16,9 +16,18 @@ html {
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 651px;
   font-family: "Courier New", Courier, monospace;
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  margin: 0px;
+  margin: 0;
   font-weight: 100;
+}
+@media screen and (min-height: 651px) {
+  body {
+    height: 101.7vh;
+  }
 }

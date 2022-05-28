@@ -167,9 +167,10 @@ const MainWindow = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 10px;
-  padding: 10px;
-  width: 950px;
-  height: 605px;
+  padding: 5px;
+  padding-bottom: 16px;
+  width: 960px;
+  height: 651px;
 `;
 /**
  *

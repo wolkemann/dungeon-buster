@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   hero: {},
+  systemWindowOpen: false,
 };
 
 export const adventureModeSlice = createSlice({
@@ -11,9 +12,13 @@ export const adventureModeSlice = createSlice({
     initializeAdventure: (state, { payload }) => {
       state.hero = payload.hero;
     },
+    toggleSystemWindow: (state) => {
+      state.systemWindowOpen = !state.systemWindowOpen;
+    },
   },
 });
 
-export const { initializeAdventure } = adventureModeSlice.actions;
+export const { initializeAdventure, toggleSystemWindow } =
+  adventureModeSlice.actions;
 
 export default adventureModeSlice.reducer;
