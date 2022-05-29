@@ -1,11 +1,18 @@
 import styled from "styled-components";
+import HeroEquipment from "./HeroEquipment";
 
 export default function Sidebar() {
-  return <Wrapper></Wrapper>;
+  return (
+    <Wrapper>
+      <HeroEquipment />
+    </Wrapper>
+  );
 }
 
 export const Wrapper = styled.div`
-  background-color: var(--secondary-color);
+  display: grid;
+  grid-template-columns: 256px auto;
+  background-color: var(--primary-color);
   border: 3px var(--primary-color) solid;
   outline: 3px var(--secondary-color) solid;
   flex-grow: 1;

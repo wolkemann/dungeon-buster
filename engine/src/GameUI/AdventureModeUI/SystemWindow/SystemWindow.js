@@ -60,7 +60,11 @@ const Wrapper = styled.div`
 `;
 
 const Menu = styled.div`
+  display: flex;
+  flex-flow: column wrap;
+  gap: 10px;
   margin: auto;
+  padding: 10px;
   width: 300px;
   height: 400px;
   background-color: var(--primary-color);
