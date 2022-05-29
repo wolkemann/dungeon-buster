@@ -13,6 +13,7 @@ export default function HeroEquipment() {
 
 const Wrapper = styled.div`
   display: flex;
+  gap: 3px;
   flex-flow: column wrap;
   justify-content: space-between;
 `;

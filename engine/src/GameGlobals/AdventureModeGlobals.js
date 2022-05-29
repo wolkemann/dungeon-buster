@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   hero: {},
+  locations: [{ location: "", scenarios: [], currentScenario: 0 }],
   systemWindowOpen: false,
 };
 

@@ -12,11 +12,13 @@ export default function ExperienceBar() {
 }
 
 const BarWrapper = styled.div`
+  outline: 3px var(--secondary-color) solid;
   background-color: var(--secondary-color);
+  margin-bottom: 3px;
 `;
 
 const Bar = styled.div`
   background-color: var(--primary-color);
   width: ${(props) => props.exp}%;
-  height: 8px;
+  height: 7px;
 `;

@@ -4,7 +4,6 @@ import { GameWindow } from "../../GameUI/AdventureModeUI/GameWindow/GameWindow";
 import HeroColumn from "../../GameUI/AdventureModeUI/HeroColumn/HeroColumn";
 import { MainWindow } from "../../GameUI/AdventureModeUI/MainWindow";
 import Navbar from "../../GameUI/AdventureModeUI/Navbar/Navbar";
-import Sidebar from "../../GameUI/AdventureModeUI/Sidebar/Sidebar";
 import SystemWindow from "../../GameUI/AdventureModeUI/SystemWindow/SystemWindow";
 
 export default function AdventureMode() {
@@ -18,7 +17,6 @@ export default function AdventureMode() {
         <HeroColumn />
         <GameColumn />
       </GameWindow>
-      <Sidebar />
     </MainWindow>
   );
 }

@@ -7,4 +7,5 @@ export const HeroPortait = styled.div`
   outline: 3px var(--secondary-color) solid;
   background-image: url(resources/faces/${(props) => props.image});
   background-position: center;
+  margin-bottom: 3px;
 `;
