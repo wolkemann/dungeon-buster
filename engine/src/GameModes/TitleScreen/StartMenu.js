@@ -9,9 +9,13 @@ export default function StartMenu() {
     dispatch(setGameScreen("HeroSelectionAdventureMode"));
   }
 
+  function handleTestMode() {
+    dispatch(setGameScreen("Test"));
+  }
+
   return (
     <StartMenuWindow>
-      <MenuButton>Tale Mode</MenuButton>
+      <MenuButton onClick={handleTestMode}>Tale Mode</MenuButton>
       <MenuButton onClick={handleAdventureMode}>Adventure Mode</MenuButton>
     </StartMenuWindow>
   );
